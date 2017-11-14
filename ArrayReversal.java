@@ -7,7 +7,7 @@ package arrayreversal;
 
 /**
  *
- * @author md
+ * @author rumana aktar
  */
 public class ArrayReversal {
 
