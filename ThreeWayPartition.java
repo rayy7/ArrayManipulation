@@ -1,5 +1,5 @@
 /*
- * Three way partitioning of an array around a given range
+ * geeksforgeeks: Three way partitioning of an array around a given range
     Given an array and a range [lowVal, highVal], partition the array around the range such that array is divided in three parts.
         1) All elements smaller than lowVal come first.
         2) All elements in range lowVal to highVVal come next.
