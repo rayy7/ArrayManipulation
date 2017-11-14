@@ -8,7 +8,7 @@ package maxsumwithrotation;
 
 /**
  *
- * @author md
+ * @author rumana aktar, idea: geeksforgeeks
  */
 public class MaxSumWithRotation {
 
@@ -16,6 +16,7 @@ public class MaxSumWithRotation {
      * @param args the command line arguments
      */
     
+    //get maxmum sum of an array when each element is multiplied by its index
     public static int getMaxSumWithRotation(int num[]){
         int arrSum=0, indexSum=0, maxSum, rotation=0;
         for(int i=0; i<num.length; i++){
@@ -26,38 +27,14 @@ public class MaxSumWithRotation {
         
         //try rotation
         for(int i=1; i<num.length; i++){
-            indexSum=indexSum+arrSum-num.length*num[num.length-i];
+            indexSum=indexSum+arrSum-num.length*num[num.length-i]; //formula
             if(indexSum>maxSum){
                 maxSum=indexSum;
                 rotation=i;
             }
-        }
-        printArray(num);
-        System.out.println("\nThe maximum indexSum obtained: "+maxSum+" ..... with rotation: "+rotation);
-        rotateArray(num, rotation);
-        printArray(num);
+        }        
         return maxSum;
-    }
-    
-    /*rotate array by d elements*/
-    public static void rotateArray(int num[], int d){
-        reverseArray(num, 0, d-1); printArray(num);
-        reverseArray(num, d, num.length-1); printArray(num);
-        reverseArray(num, 0, num.length-1); printArray(num);
-    }
-    
-    public static void reverseArray(int num[], int start, int end){
-        while(start<end){
-            int temp=num[start];
-            num[start++]=num[end];
-            num[end--]=temp;
-        }
-    }
-    public static void printArray(int num[]){
-        System.out.print("\n\nThe array is: ");
-        for(int i=0; i<num.length; i++)
-            System.out.print(num[i]+"  ");
-    }
+    }    
     
     public static void main(String[] args) {
         // TODO code application logic here
