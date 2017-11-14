@@ -1,4 +1,4 @@
-/*
+/* Rearrange positive and negative numbers in O(n) time and O(1) extra space
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,7 +7,7 @@ package placeposnevposneg;
 
 /**
  *
- * @author md
+ * @author rumana aktar, idea: geeksforgeeks
  */
 public class PlacePosNevPosNeg {
 
@@ -22,13 +22,10 @@ public class PlacePosNevPosNeg {
         num[y]=temp;
     }
     
-    public static void printArray(int num[]){
-        System.out.print("\n\nThe array is: ");
-        for(int i=0; i<num.length; i++)
-            System.out.print(num[i]+"  ");
-    }
     
     public static void rearrangePosNegPosNeg(int num[]){
+        
+        //partition around 0:  -1  -2  -4  -5  -7  -8  4  5  6  7  
         int i=0;
         for(int j=0; j<num.length; j++){
             if(num[j]<0){
@@ -36,8 +33,9 @@ public class PlacePosNevPosNeg {
                 i++;
             }
         }
-        printArray(num);
         
+        //for each positive number, replace with alternative negai=tives
+        //4  -2  5  -5  6  -8  7  -4  -7  -1
         int j=0;
         for(i=0; i<num.length; i++){
             if(j>i)
@@ -47,14 +45,13 @@ public class PlacePosNevPosNeg {
                 j=j+2;               
             }
         }
-        printArray(num);
         
     }
     
     public static void main(String[] args) {
         // TODO code application logic here
         int num[]={-1,-2,-4,-5,-7,-8,4, 5,6 ,7};
-        rearrangePosNegPosNeg(num);
+        rearrangePosNegPosNeg(num); //4  -2  5  -5  6  -8  7  -4  -7  -1
     }
     
 }
