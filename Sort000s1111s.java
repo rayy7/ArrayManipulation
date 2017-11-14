@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * sort an array consists of 0's and 1's only: time: O(n), Space: O(1)
+ * input: 0,0,0,1,1,1,0,1
+ * output: 0,0,0,0,1,1,1,1
  */
 package sort000s1111s;
 
@@ -23,20 +23,17 @@ public class Sort000s1111s {
     public static void sort000s111s(int num[]){
         int low=0, high=num.length-1;
         while(low<high){
-            if(num[low]==0)
+            if(num[low]==0) //if it is 0, keep going
                 low++;
             else{
-                while(high>=0 && num[high]==1)
+                while(high>=0 && num[high]==1) //if it is 1, replace with the first zero from end
                     high--;                
                 if(low>=high)
                     break;
                 swap(num, low, high);
                 low++;high--;
-            }
-                
-        }
-        for(int i=0; i<num.length; i++)
-            System.out.print(num[i]+" ");
+            }                
+        }        
     
     }
     public static void main(String[] args) {
