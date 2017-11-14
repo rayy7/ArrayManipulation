@@ -1,13 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * input: num[]={12,-3,4,-4,-6,45,-11,-12,44,87,-8,-10};
+ * output: {12,4,45,44,87,-3,-4,-6,-11,-12,-8,-10}
  */
 package rearrangeposneg;
 
 /**
  *
- * @author md
+ * @author rumana aktar, idea: geeksforgeeks
  */
 public class RearrangePosNeg {
 
@@ -15,12 +14,8 @@ public class RearrangePosNeg {
      * @param args the command line arguments
      */
     
-    public static void printArray(int num[]){
-        System.out.print("\n\nThe array is: ");
-        for(int i=0; i<num.length; i++)
-            System.out.print(num[i]+"  ");
-    }
-    public static void posNegNotInOrder(int num[]){ //O(n) time, O(1) space
+    
+    public static int [] posNegNotInOrder(int num[]){ //O(n) time, O(1) space
         int i=0;
         for(int j=0; j<num.length; j++){
             if(num[j]>0){
@@ -30,10 +25,10 @@ public class RearrangePosNeg {
                 i++;
             }
         }
-        printArray(num);
+        return num;
     }
     
-    public static void posNegInOrder(int num[]){ //O(n) time, O(n) space
+    public static int [] posNegInOrder(int num[]){ //O(n) time, O(n) space
         int temp[]=new int[num.length];
         int j=0;
         for(int i=0; i<num.length; i++){
@@ -44,7 +39,7 @@ public class RearrangePosNeg {
             if(num[i]<0)
                 temp[j++]=num[i];
         }
-        printArray(temp);
+        return temp;
     }
     public static void main(String[] args) {
         // TODO code application logic here
